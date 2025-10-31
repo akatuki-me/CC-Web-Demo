@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>QR / Barcode Scanner</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <h1>QR / Barcode Scanner</h1>
+
+        <div class="scanner-container">
+          <video id="video" autoplay playsinline></video>
+          <canvas id="canvas" class="hidden"></canvas>
+          <div class="scanner-overlay">
+            <div class="scanner-frame"></div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="startButton" class="btn btn-primary">Start Scanning</button>
+          <button id="stopButton" class="btn btn-secondary hidden">Stop Scanning</button>
+        </div>
+
+        <div id="result" class="result hidden">
+          <h2>Scan Result:</h2>
+          <div id="resultContent" class="result-content"></div>
+          <button id="copyButton" class="btn btn-small">Copy</button>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <div class="info">
+          <p>📱 This app works best on mobile devices with rear cameras.</p>
+          <p>🔒 Camera permission required.</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
